@@ -7,6 +7,7 @@ from datetime import UTC, datetime
 from functools import lru_cache
 from pathlib import Path
 
+
 def _find_weather_model() -> Path:
     direct = Path(__file__).resolve().parents[1] / "data/weather_anomaly_model.json"
     if direct.exists():

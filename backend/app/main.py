@@ -79,6 +79,7 @@ from .telematics import (
 from .weather import get_all_live_weather, get_station_weather
 from .weather_anomaly import load_weather_anomaly_model
 
+
 def _resolve_root() -> Path:
     configured = os.getenv("RAAHSETU_ROOT") or os.getenv("APP_ROOT")
     if configured and Path(configured).exists():
