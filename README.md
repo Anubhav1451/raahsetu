@@ -1,12 +1,16 @@
 # RaahSetu
 
-Working name for the SIH26002 team prototype. The final project name is still your team's decision.
+**An explainable, risk-aware logistics route planner for North-East India** — built for Smart India Hackathon 2026 (Problem Statement SIH26002, MDoNER).
 
-An explainable logistics route planner for North-East India. It compares estimated fastest routes with routes that account for road risk, vehicle limits and closures. The stack follows the team blueprint: **React + TypeScript + React Three Fiber, Python 3.12 + FastAPI, OSMnx, Supabase/PostGIS, Docker and Kubernetes on VMs**.
+🔗 **Live demo:** https://raahsetu-sih-2026.vercel.app
+
+> This is my personal working repository for RaahSetu. The project was originally built together with my team; all my ongoing development happens here.
+
+It compares estimated fastest routes with routes that account for road risk, vehicle limits and closures. The stack follows the team blueprint: **React + TypeScript + React Three Fiber, Python 3.12 + FastAPI, OSMnx, Supabase/PostGIS, Docker and Kubernetes on VMs**.
 
 ## Start the project on Windows
 
-The environment in `D:\FORSIH` is already installed. From PowerShell in this folder:
+From PowerShell in this folder:
 
 ```powershell
 .\scripts\start.ps1
@@ -104,11 +108,6 @@ Read `docs/DATA.md` before using a source in risk scoring. Never treat aggregate
 The corridor builder creates `osm-guwahati-corridor-reviewed-v1` from two 1 km accuracy historical observations near Dispur and Chandmari. It is a reproducible provisional pilot snapshot; run domain review before operational use.
 
 `datasets/processed/ne-coverage-catalog.json` is the explicit Northeast coverage manifest: all eight states, all eight capitals, OSM road extracts and facility files with counts.
-
-`prepare_runtime.py` converts every processed state road extract into a validated
-`backend/data/osm-<state>.json` snapshot. Use `--only assam` for an incremental rebuild.
-The API endpoint `/api/v1/data-status` reports whether regional snapshots are ready,
-how much source data has been verified, and which evidence gaps remain.
 
 `prepare_runtime.py` converts every processed state road extract into a validated
 `backend/data/osm-<state>.json` snapshot. Use `--only assam` for an incremental rebuild.
